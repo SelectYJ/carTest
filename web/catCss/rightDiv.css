@@ -1,0 +1,13 @@
+.onDiv-right{
+  background-color: #79afafa8;
+  float: left;
+  width: 90%;
+  height: 90%;
+}
+.onDiv-right>div,iframe{
+  padding: 20px;
+}
+.onDiv-right>ul>li{
+  float: left;
+  margin: 10px;
+}

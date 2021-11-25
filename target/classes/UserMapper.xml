@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserMapper">
+
+    <select id="getPassAndId" resultType="com.bean.sUser" parameterType="String" resultMap="r0">
+        select * from user_adm where user_name = #{id}
+<!--        <where>-->
+<!--            <if test="user_name!=null and user_name!= ''">-->
+<!--              and  user_name=#{id}-->
+<!--            </if>-->
+<!--            <if test="user_id!=null and user_id!= ''">-->
+<!--              and  user_id=#{id}-->
+<!--            </if>-->
+<!--        </where>-->
+
+    </select>
+    <resultMap id="r0" type="com.bean.sUser">
+        <id property="us_id" column="user_id"/>
+        <result property="us_username" column="user_name"/>
+        <result property="us_pass" column="user_pass"/>
+        <result property="us_email" column="user_email"/>
+        <result property="us_photo" column="user_photo"/>
+        <result property="us_img" column="user_img"/>
+    </resultMap>
+
+    <select id="getsUser" resultType="com.bean.sUser" parameterType="String" resultMap="r1">
+        select * from user_adm where user_id=#{id}
+    </select>
+    <resultMap id="r1" type="com.bean.sUser">
+        <id property="us_id" column="user_id"/>
+        <result property="us_username" column="user_name"/>
+        <result property="us_pass" column="user_pass"/>
+        <result property="us_email" column="user_email"/>
+        <result property="us_photo" column="user_photo"/>
+        <result property="us_img" column="user_img"/>
+    </resultMap>
+
+    <update id="upDataUser" parameterType="com.bean.sUser">
+        update
+            user_adm
+        set
+            user_name=#{us_username},
+            user_pass=#{us_pass},
+            user_email=#{us_email},
+            user_photo=#{us_photo}
+        where
+            user_id=#{us_id}
+    </update>
+
+    <insert id="insertUser" parameterType="com.bean.sUser" useGeneratedKeys="true">
+        insert into user_adm(user_name, user_pass, user_email, user_photo) values(#{us_username},#{us_pass},#{us_email},#{us_photo});
+    </insert>
+
+
+    <select id="getsCar" resultType="com.bean.sCar" parameterType="String" resultMap="r3">
+        select * from car_adm
+    </select>
+    <resultMap id="r3" type="com.bean.sCar">
+        <id property="car_id" column="car_id"/>
+        <result property="car_name" column="car_name"/>
+        <result property="car_price" column="car_price"/>
+        <result property="car_quantity" column="car_quantity"/>
+        <result property="car_production_time" column="car_production_time"/>
+        <result property="car_img" column="car_img"/>
+    </resultMap>
+
+    <select id="reSelectCar" resultType="com.bean.sCar" parameterType="String" resultMap="r4">
+        select
+            car_name,
+            car_price,
+            car_quantity,
+            car_img
+        from
+            car_adm
+        where
+            car_name=#{id}
+    </select>
+    <resultMap id="r4" type="com.bean.sCar">
+        <id property="car_id" column="car_id"/>
+        <result property="car_name" column="car_name"/>
+        <result property="car_price" column="car_price"/>
+        <result property="car_quantity" column="car_quantity"/>
+        <result property="car_img" column="car_img"/>
+    </resultMap>
+
+    <delete id="deleteUser">
+        delete from user_adm where user_name=#{id}
+    </delete>
+
+</mapper>

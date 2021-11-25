@@ -1,0 +1,81 @@
+.onDiv-left{
+  background-color: #627373;
+  float: left;
+  width: 10%;
+  height: 90%;
+}
+.sLi{
+  position: relative;
+  background-color: rgba(127, 255, 212, 0);
+  height: 50px;
+  line-height: 50px;
+}
+.oneLi{
+  margin: 15px;
+}
+.sA:hover{
+  background-color: #154444;
+}
+.liA:hover{
+  background-color: #4e632e;
+}
+.oneA,.sA,.liA>a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  cursor: pointer;
+}
+.spanTop {
+  width:0;
+  height:0px;
+  overflow:hidden;
+  border:7px solid transparent;
+  border-bottom-color:#2DCB70;
+  position: absolute;
+  top: 27%;
+  right: 5%;
+}
+.spanBom {
+  width:0;
+  height:0px;
+  overflow:hidden;
+  border:7px solid transparent;
+  border-top-color:#2DCB70;
+  position: absolute;
+  top: 45%;
+  right: 5%;
+}
+.liTop{
+  background-color: rgb(230, 230, 230);
+}
+.disDiv{
+  display: none;
+}
+.photo{
+  border-radius: 100%;
+  border: 1px solid red;
+  width: 85px;
+  height: 85px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+.photo>img{
+  width: 100%;
+  height: 100%;
+}
+p{
+  text-align: center;
+  color: white;
+}
+.liA{
+  width: 150px;
+  height: 48px;
+}
+.bacColor{
+	background-color: #4e632e;
+}
+.liA>a{
+  height: 100%;
+  margin-left: 30px;
+}
